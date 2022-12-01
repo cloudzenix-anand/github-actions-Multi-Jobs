@@ -1,4 +1,4 @@
-name: "Frogbot Scan and Fix" 
+name: "Frogbot Scan" 
 on:
   push:
     # Creating fix pull requests will be triggered by any push to one of the these branches.
