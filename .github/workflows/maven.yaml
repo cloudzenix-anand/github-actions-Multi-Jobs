@@ -57,3 +57,8 @@ jobs:
              jf rt upload cz-springboot-welcome.jar maven-demo --url=https://cloudzenix.jfrog.io/artifactory/ --user=renuka.prasad@cloudzenix.com --password=Prasad@123
              jf rt build-publish gitaction --buildname=$BUILD_NUMBER --url=https://cloudzenix.jfrog.io/artifactory/ --user=renuka.prasad@cloudzenix.com --password=Prasad@123
              jf rt bs gitaction --buildname=$BUILD_NUMBER --url=https://cloudzenix.jfrog.io/artifactory/ --user=renuka.prasad@cloudzenix.com --password=Prasad@123 --fail=false
+      - name: Step:6 Build & Push Docker image to JFrog-Artifact repo
+        run: |
+          docker login -urenuka.prasad@cloudzenix.com -p Prasad@123 cloudzenix.jfrog.io
+          docker build -t cloudzenix.jfrog.io/docker-repo/cz-springboot-welcome:latest1 .
+          docker push cloudzenix.jfrog.io/docker-repo/cz-springboot-welcome:latest1
