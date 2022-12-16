@@ -43,7 +43,8 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: Springboot artifact
-      - run: ls
+      - run: ls -la
+      - run: pwd
           
       - name: Setting up Jfrog-CLI
         uses: jfrog/setup-jfrog-cli@v2
