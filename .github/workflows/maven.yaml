@@ -48,7 +48,8 @@ jobs:
       uses: kitabisa/sonarqube-action@v1.2.0
       with:
         host: ${{ secrets.SQHost }}
-        login: ${{ secrets.SQToken }}        
+        login: ${{ secrets.SQToken }}  
+        projectBaseDir: "src/"
   Pushing-Artifact-to-Jfrog_Repo:
     name: Pushing-Artifact-to-Jfrog_Repo
     runs-on: ubuntu-latest
